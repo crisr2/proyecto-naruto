@@ -1,5 +1,7 @@
 package factory;
 
-public interface NinjaFactory {
+import builder.NinjaBuilder;
 
+public abstract class NinjaFactory {
+    public abstract NinjaBuilder crearNinja();
 }
