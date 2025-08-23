@@ -56,6 +56,7 @@ public class App {
         haku.AgregarTecnica(new Jutsu("Senbon Preciso", "Ninjutsu", 70, 15));
 
         // Agregados
+        System.out.println("\n\n---------------- Ninjas Registrados\n");
         System.out.println("- " + naruto.getNombre() + " de " + naruto.getAldea().getNombre() + " (" + naruto.getRango() + ")");
         System.out.println("- " + gaara.getNombre() + " de " + gaara.getAldea().getNombre() + " (" + gaara.getRango() + ")");
         System.out.println("- " + sakura.getNombre() + " de " + sakura.getAldea().getNombre() + " (" + sakura.getRango() + ")");
@@ -64,6 +65,7 @@ public class App {
       
         // Misiones
         // ----------------------------
+        System.out.println("\n\n---------------- Misiones");
         Mision misionD = new Mision("Recolectar Hierbas", "Misión básica de entrenamiento", RangoMision.D, 100);
         Mision misionC = new Mision("Escoltar Comerciante", "Proteger la caravana", RangoMision.C, 300);
         Mision misionB = new Mision("Cazar Bandidos", "Eliminar a los bandidos", RangoMision.B, 500);
@@ -95,10 +97,31 @@ public class App {
         misionS.agregarParticipante(naruto); // No pasa, Genin
         misionS.agregarParticipante(haku);   // Si pasa, Jonin
 
-      
+
+        // Entrenamiento
+        // ----------------------------
+        System.out.println("\n\n---------------- Entrenamientos");
+        Entrenamiento entAtaque = new Entrenamiento("Ataque", "Media"); // Dificultades Media, Alta y Baja
+        entAtaque.entrenar(naruto);
+
+        Entrenamiento entDefensa = new Entrenamiento("Defensa", "Alta");
+        entDefensa.entrenar(sakura);
+
+        Entrenamiento entChakra = new Entrenamiento("Chakra", "Baja");
+        entChakra.entrenar(gaara);
+
+        
+        // Combate
+        // ----------------------------
+        System.out.println("\n\n---------------- Combate\n");
+        Combate combate = new Combate(haku, sakura);
+        combate.combatir();
+
+
         // Informes
         // ----------------------------
-        System.out.println("\n\nSe ha solicitado la exportación del informe...");
+        System.out.println("\n\n---------------- Informes");
+        System.out.println("\nSe ha solicitado la exportación de informes...");
         Set<Aldea> aldeas = new HashSet<>();
         aldeas.add(naruto.getAldea());
         aldeas.add(gaara.getAldea());

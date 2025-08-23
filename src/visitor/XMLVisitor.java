@@ -44,7 +44,7 @@ public class XMLVisitor implements Visitor {
                .append("    <ninjas>\n");
 
         for (Ninja n : aldea.getNinjas()) {
-            n.accept(this); // Usamos accept() aquí
+            n.accept(this);
         }
 
         reporte.append("    </ninjas>\n")
@@ -86,12 +86,12 @@ public class XMLVisitor implements Visitor {
         reporte.append("<informe>\n  <aldeas>\n");
 
         for (Aldea aldea : aldeas) {
-            aldea.accept(this); // Usamos accept()
+            aldea.accept(this); 
         }
 
         reporte.append("  </aldeas>\n\n  <misiones>\n");
         for (Mision m : misiones) {
-            m.accept(this); // Usamos accept()
+            m.accept(this); 
         }
 
         reporte.append("  </misiones>\n</informe>");

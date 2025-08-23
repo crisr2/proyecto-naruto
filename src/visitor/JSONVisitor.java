@@ -48,7 +48,7 @@ public class JSONVisitor implements Visitor {
 
         List<Ninja> ninjas = aldea.getNinjas();
         for (int i = 0; i < ninjas.size(); i++) {
-            ninjas.get(i).accept(this); // Usamos accept()
+            ninjas.get(i).accept(this); 
             if (i < ninjas.size() - 1) reporte.append(",");
             reporte.append("\n");
         }

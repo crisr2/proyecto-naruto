@@ -38,7 +38,6 @@ public class TextVisitor implements Visitor {
                 .append(" (").append(aldea.getNacion()).append(")\n");
         reporte.append("Número de ninjas: ").append(aldea.getNinjas().size()).append("\n");
 
-        // Visitar cada ninja de la aldea usando accept()
         for (Ninja n : aldea.getNinjas()) {
             n.accept(this);
         }
