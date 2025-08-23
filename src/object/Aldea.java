@@ -1,8 +1,8 @@
 package object;
 
-// Para las listas de ninjas pertenecientes
 import java.util.ArrayList;
 import java.util.List;
+import visitor.Visitor;
 
 public class Aldea {
     private String nombre;
@@ -18,6 +18,10 @@ public class Aldea {
         ninjas.add(ninja);
     }
 
+    public void accept(Visitor visitor) {
+        visitor.visitarAldea(this);
+    }
+
     // Getters y Setters
     public String getNombre() { return nombre; }
     public void setNombre(String nombre) { this.nombre = nombre; }
@@ -26,5 +30,6 @@ public class Aldea {
     public void setNacion(String nacion) { this.nacion = nacion; }
 
     public List<Ninja> getNinjas() { return ninjas; }
+
 }
 

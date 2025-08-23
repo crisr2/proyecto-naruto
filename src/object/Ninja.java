@@ -2,6 +2,7 @@ package object;
 
 import java.util.ArrayList;
 import java.util.List;
+import visitor.Visitor;
 
 public class Ninja {
     private String nombre;
@@ -21,6 +22,10 @@ public class Ninja {
 
     public void AgregarTecnica(Jutsu jutsu) { jutsus.add(jutsu); }
 
+    public void accept(Visitor visitor) {
+        visitor.visitarNinja(this);
+    }
+ 
     // Getters y Setters
     public String getNombre() { return nombre; }
     public void setNombre(String nombre) { this.nombre = nombre; }
